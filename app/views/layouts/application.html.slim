@@ -1,0 +1,44 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title == content_for?(:title) ? yield(:title) : "Webshop"
+
+    = stylesheet_link_tag "http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css", :application
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tag
+
+  body
+    .top-bar
+      .top-bar-left
+        ul.menu
+          li.menu-text Webshop
+          - if user_signed_in?
+            li= t(:logged_in_as, name: current_user.name)
+            li= link_to t(:sign_out_link), destroy_user_session_path
+          - else
+            li= link_to t(:sign_in_link), new_user_session_path
+            li= link_to t(:register_link), new_user_registration_path
+          li= link_to 'Admin', admin_root_path 
+    == yield
+    .callout.large.secondary
+      .row
+        .large-4.columns
+          h5 Webshop
+          p Készítette: 
+          p EHA: 
+        .large-3.columns.large-offset-2
+          ul.menu.vertical
+            li=link_to 'One', '#'
+            li=link_to 'One', '#'
+            li=link_to 'One', '#'
+            li=link_to 'One', '#'
+        .large-3.columns
+          ul.menu.vertical
+            li=link_to 'One', '#'
+            li=link_to 'One', '#'
+            li=link_to 'One', '#'
+            li=link_to 'One', '#'

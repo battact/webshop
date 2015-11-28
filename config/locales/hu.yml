@@ -1,0 +1,39 @@
+hu:
+  our_newest_products: 'Legújabb termékeink'
+  other_products: 'Még több termék'
+  buy_button: 'Megveszem'
+  sign_in_link: 'Bejelentkezés'
+  sign_out_link: 'Kijelentkezés'
+  register_link: 'Regisztráció'
+  logged_in_as: "Bejelentkezve mint %{name}"
+  active_admin:
+    search_status:
+      headline: 'Szűrés'
+      current_filters: 'Feltételek'
+  activerecord:
+    models:
+      category:
+        one: 'Kategória'
+        other: 'Kategóriák'
+      product:
+        one: 'Termék'
+        other: 'Termékek'
+      user:
+        one: 'Felhasználó'
+        other: 'Felhasználók'
+      review:
+        one: 'Vélemény'
+        other: 'Vélemények'
+    attributes:
+      category:
+        title: 'Kategória neve'
+      product: 
+        title: 'Termék neve'
+        price: 'Ár'
+        stock: 'Készlet'
+        product_picture: 'Termék képe'
+        description: 'Leírás' 
+      user:
+        email: 'Email'
+
+

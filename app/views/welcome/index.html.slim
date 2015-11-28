@@ -1,0 +1,7 @@
+.row.column.text-center
+  h2=t(:our_newest_products)
+  hr
+  .row.small-up-2.large-up-4
+    = render partial: "products/big_product_card", collection: @top_products
+    hr
+  = render partial: "categories/welcome_category", collection: @categories

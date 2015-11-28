@@ -1,0 +1,6 @@
+.column
+  = link_to small_product_card do
+    = image_tag 'http://placehold.it/300x400', class: :thumbnail
+    h5= small_product_card.title
+    p= small_product_card.price_with_tag
+    = link_to t(:buy_button), '#', class: 'button small expanded hollow'

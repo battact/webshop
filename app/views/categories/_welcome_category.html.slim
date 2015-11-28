@@ -1,0 +1,5 @@
+.row.column.text-center
+  h2=welcome_category.title
+.row.small-up-2.medium-up-3.large-up-6
+  = render partial: "products/small_product_card", collection: welcome_category.products.first(6)
+  hr
