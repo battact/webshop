@@ -1,0 +1,43 @@
+br
+.row
+  .medium-6.columns
+    = placeholder_image 650, 350, :thumbnail
+    .row.small-up-4
+      - 4.times do
+        .column
+          = placeholder_image 250, 200, :thumbnail
+  .medium-6.large.columns
+    h3= @product.title
+    p= @product.description
+
+    = link_to t(:buy_now), '#', class: "button large expanded"
+    .small.secondary.expanded.button-group
+      =link_to 'Facebook', '#', class: :button
+      = link_to 'Twitter', '#', class: :button
+      = link_to 'Yo', '#', class: :button
+
+.column.row
+  hr
+  ul.tabs#example-tabs
+    li.tabs-title.is-active role= :presentation
+      = link_to t(:reviews), '#panel1'
+  .tabs-content data-tabs-content='example-tabs'
+    .tabs.is-active#panel1
+      h4=t(:reviews)
+      - @product.reviews.each do |review|
+        = render review
+.column.row
+  hr
+  - if user_signed_in?
+    - @review = @review || Review.new
+    h4 Write your Review
+    = form_for(@review, remote: true) do |f|
+      = f.label :description, 'Review'
+      = f.text_area :description, placeholder: 'None'
+
+      = f.hidden_field :user_id, value: current_user.id
+      = f.hidden_field :product_id, value: @product.id
+
+      = f.submit 'Submit', class: :button
+  - else
+    | Please #{link_to 'Log in', new_user_session_path } to create a review

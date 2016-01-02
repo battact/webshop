@@ -20,6 +20,16 @@
         </div>
         <div class="row">
           <div class="large-12 columns">
+            <%= f.text_field :first_name, autofocus: true, placeholder: 'First name' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.text_field :last_name, autofocus: true, placeholder: 'Last Name' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
             <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
           </div>
         </div>
