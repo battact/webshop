@@ -1,0 +1,7 @@
+cd ~
+git clone https://..../webshop.git
+cd webshop
+bundle install
+rake db:migrate
+rake db:populate
+rails s
